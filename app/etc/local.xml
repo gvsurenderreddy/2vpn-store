@@ -28,10 +28,10 @@
 <config>
     <global>
         <install>
-            <date><![CDATA[Fri, 06 Dec 2013 14:21:30 +0000]]></date>
+            <date><![CDATA[Fri, 06 Dec 2013 16:27:12 +0000]]></date>
         </install>
         <crypt>
-            <key><![CDATA[ab780e8bdeb90855ae2399865be19a2a]]></key>
+            <key><![CDATA[156075f80ca067839099a4a312aa629f]]></key>
         </crypt>
         <disable_local_modules>false</disable_local_modules>
         <resources>
@@ -40,9 +40,9 @@
             </db>
             <default_setup>
                 <connection>
-                    <host><![CDATA[localhost]]></host>
+                    <host><![CDATA[sql.valentinpolo.fr]]></host>
                     <username><![CDATA[magento]]></username>
-                    <password><![CDATA[magento]]></password>
+                    <password><![CDATA[VIg0bm3PP1HD6qVK]]></password>
                     <dbname><![CDATA[magento]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
