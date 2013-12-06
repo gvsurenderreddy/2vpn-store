@@ -1,0 +1,9 @@
+GIT:
+
+Pour commit:
+git add .
+git commit -m "Modif de Victor"
+git push origin
+
+Pour récupérer:
+git pull
