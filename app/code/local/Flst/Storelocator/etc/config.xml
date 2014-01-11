@@ -1,0 +1,18 @@
+<config>
+    <modules>
+        <Flst_Storelocator>
+            <version>0.0.1</version>
+        </Flst_Storelocator>
+    </modules>
+    <frontend>
+        <routers>
+            <Storelocator>
+                <use>standard</use>
+                <args>
+                    <module>Flst_Storelocator</module>
+                    <frontName>storelocator</frontName>
+                </args>
+            </Storelocator>
+        </routers>
+    </frontend>
+</config>
