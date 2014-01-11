@@ -4,11 +4,7 @@ class Flst_Storelocator_IndexController extends Mage_Core_Controller_Front_Actio
 {
     public function indexAction()
     {
-        echo 'Méthode par défaut';
-    }
-    
-    public function helloAction()
-    {
-        echo 'Méthode Helo!';
+        $this->loadLayout();
+        $this->renderLayout();
     }
 }
