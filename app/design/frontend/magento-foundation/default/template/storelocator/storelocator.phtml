@@ -31,7 +31,7 @@
         for (var i = 0; i < locations.length; i++) {
             var store = locations[i];
             var myLatLng = new google.maps.LatLng(store[1], store[2]);
-            var content = '<div class="map-content"><h5>'+store[0]+'</h5><p><strong>Informations</strong> :<br /> '+store[4]+'</p></div>';
+            var content = '<div class="map-content"><h5>'+store[0]+'</h5><p><strong>Adresse</strong> :<br /> '+store[4]+'</p><p><strong>Informations</strong> :<br />'+store[5]+'</p></div>';
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
