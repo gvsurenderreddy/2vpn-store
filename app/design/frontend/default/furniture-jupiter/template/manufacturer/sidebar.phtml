@@ -1,0 +1,101 @@
+<?php 
+$catId = $this->getRequest()->getParam('id');
+
+?>
+
+<?php if(Mage::helper('manufacturer')->isDisplayOnSidebar()): ?>
+	<?php $catId = Mage::app()->getRequest()->getParam('catid'); ?>
+	
+		<?php
+			if(Mage::helper('manufacturer')->getOrderType() == '2'): 
+				$manufacturers = $this->sortNumberProduct();
+				if(count($manufacturers)):
+					$i = 0;
+					$column = Mage::helper('manufacturer')->getNumberColumn();
+		?>
+			<div class="block block-brands">
+				<div class="block-title"><strong><span><?php echo $this->__('Manufactured'); ?></strong></span></div>
+				<div class="block-content">
+					<div id="manufacturer-table">
+						<table id="listmanufacturer">
+							<?php		
+								foreach($manufacturers as $id=>$numberProduct):
+									if($i % $column == 0):
+							?>
+									<tr>
+								<?php endif; ?>
+								<?php $manufacturer = Mage::getModel('manufacturer/manufacturer')->load($id);?>
+								<?php if(!Mage::helper('manufacturer')->displayManufacturerHasNoProduct()): ?>
+									<?php if($numberProduct): ?>
+										<td><a href="<?php echo $this->getManufacturerDetailUrl($manufacturer); ?>" title="<?php echo $manufacturer->getName(); ?>"><?php echo $this->__('+&nbsp;'); ?><?php echo $manufacturer->getData('name_store'); ?></a>
+										<?php if(Mage::helper('manufacturer')->isDisplayNumberProduct()): ?>
+											(<?php echo $numberProduct; ?>)
+										<?php endif; ?>
+										</td>
+									<?php $i++; endif; ?>
+								<?php else: ?>
+										<td><a href="<?php echo $this->getManufacturerDetailUrl($manufacturer); ?>" title="<?php echo $manufacturer->getName(); ?>"><?php echo $this->__('+&nbsp;'); ?><?php echo $manufacturer->getData('name_store'); ?></a>
+										<?php if(Mage::helper('manufacturer')->isDisplayNumberProduct()): ?>
+											(<?php echo $numberProduct; ?>)
+										<?php endif; ?>
+										</td>
+									<?php $i++;?>
+								<?php endif; ?>
+								<?php if($i % $column == 0): ?>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</table>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+		<?php else:
+				$manufacturers = $this->getManufacturers();
+				if(count($manufacturers)):
+					$i = 0;
+					$column = Mage::helper('manufacturer')->getNumberColumn();
+		?>
+			<div class="block block-brands">
+				<div class="block-title"><strong><span><?php echo $this->__('Manufactured'); ?></strong></span></div>
+				<div class="block-content">
+					<div id="manufacturer-table">
+						<table id="listmanufacturer">
+							<?php		
+								foreach($manufacturers as $manufacturer):
+									$numberProduct = count(Mage::getModel('manufacturer/manufacturer')->addFilters($catId, $manufacturer->getId()));
+									if($i % $column == 0):
+							?>
+									<tr>
+								<?php endif; ?>
+								
+								<?php if(!Mage::helper('manufacturer')->displayManufacturerHasNoProduct()): ?>
+									<?php if($numberProduct): ?>
+										<td><a href="<?php echo $this->getManufacturerDetailUrl($manufacturer); ?>" title="<?php echo $manufacturer->getName(); ?>"><span><?php echo $this->__('+&nbsp;&nbsp;'); ?><?php echo $manufacturer->getData('name_store'); ?></span></a>
+										<?php if(Mage::helper('manufacturer')->isDisplayNumberProduct()): ?>
+											(<?php echo $numberProduct; ?>)
+										<?php endif; ?>
+										</td>
+									<?php $i++; endif; ?>
+								<?php else: ?>
+										<td><a href="<?php echo $this->getManufacturerDetailUrl($manufacturer); ?>" title="<?php echo $manufacturer->getName(); ?>"><span><?php echo $this->__('+&nbsp;&nbsp;'); ?><?php echo $manufacturer->getData('name_store'); ?></span></a>
+										<?php if(Mage::helper('manufacturer')->isDisplayNumberProduct()): ?>
+											(<?php echo $numberProduct; ?>)
+										<?php endif; ?>
+										</td>
+									<?php $i++; ?>
+								<?php endif; ?>
+								<?php if($i % $column == 0): ?>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</table>
+					</div>
+				</div>
+			</div>
+				<?php endif; ?>
+			<?php endif; ?>
+			<script type="text/javascript">
+				decorateTable('listmanufacturer');
+			</script>		
+<?php endif; ?>

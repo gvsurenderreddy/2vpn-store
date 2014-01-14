@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <magestore translate="label">
+            <label>Magestore Extension</label>
+            <sort_order>400</sort_order>
+        </magestore>
+    </tabs>
+    <sections>	
+		<productnavigator>
+			<class>separator-top</class>
+            <label>Product Navigator</label>
+            <tab>magestore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>499</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+                    <label>General Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<columns translate="label">
+                            <label>Number of columns</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </columns>	
+						<num_show>
+							<label>Number of products show in list block</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</num_show>	
+					</fields>
+				</general>
+				<all translate="label">
+                    <label>All</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>	
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</all>	
+				<new translate="label">
+                    <label>New</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>	
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</new>
+				<bestseller translate="label">
+                    <label>Besst Seller</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</bestseller>
+				<mostview translate="label">
+                    <label>Most View</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>	
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</mostview>
+				<special translate="label">
+                    <label>Special</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>					
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</special>
+				<feature translate="label">
+                    <label>Feature</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>	
+						<is_show translate="label">
+                            <label>Is Show</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show>
+						<title translate="label">
+                            <label>Navigator Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>	
+						<page_title translate="label">
+                            <label>Page Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_title>
+						<order translate="label">
+                            <label>Order</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order>					
+						<show_price translate="label">
+                            <label>Show Product Price</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>30</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>
+						<show_name translate="label">
+                            <label>Show Product Name</label>
+                            <frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_name>
+					</fields>
+				</feature>
+            </groups>
+        </productnavigator> 	
+    </sections>
+</config>

@@ -1,0 +1,53 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Wizardinstaller
+ */
+?>
+<?php $banners = $this->getBanners()?>
+<div class="message">
+	<div class="title"><?php echo $this->__('Do you want to use the default banners?') ?></div>
+	<div class="theme-select">
+		<?php if(count($banners) ): ?>
+			<?php $i = 0 ; ?>
+			<ul>
+			<?php foreach($banners as $banner): ?>
+				<?php $i++ ?>
+				<li>
+					<span class="label"><label><?php echo $i ?>. <?php echo $banner['title'] ?></label></span>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+		<div class="content-option-installer">
+			<ul>
+				<li>
+					<input type="radio" value="1" id="is_install_theme_yes" class="radio validate-one-required-by-name" name="is_install_theme" checked>
+					<span class="label"><label for="is_install_theme_yes"><?php echo $this->__('Yes') ?></label></span>
+				</li>
+				<li>
+					<input type="radio" value="0" id="is_install_theme_no" class="radio validate-one-required-by-name" name="is_install_theme">
+					<span class="label"><label for="is_install_theme_no"><?php echo $this->__('No') ?></label></span>
+				</li>			
+			</ul>	
+		</div>
+		<input type="hidden" name="run_installer" value="1" />	
+		<input type="hidden" name="selected_theme" value="<?php echo $this->getSelectedTheme() ?>" />	
+	</div>
+</div>
+<div class="buttons">
+	<button type="button" class="themeinstaller-back button" onclick="themeInstaller.back();">
+		<span>
+			<span><?php echo $this->__('Back')?></span>
+		</span>
+	</button>
+	<button type="button" class="themeinstaller-cancel button btn-sparator" onclick="themeInstaller.cancel();">
+		<span>
+			<span><?php echo $this->__('Cancel')?></span>
+		</span>
+	</button>	
+	<button type="button" class="themeinstaller-accept button" onclick="themeInstaller.run();">
+		<span>
+			<span><?php echo $this->__('Next')?></span>
+		</span>
+	</button>			
+</div>

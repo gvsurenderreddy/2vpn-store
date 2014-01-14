@@ -1,0 +1,15 @@
+<?php $array = $this->getShow();?>
+<div style="background: #0A263C;">
+<ul id="nav">
+	<?php foreach ($array as $key=>$show):?>
+		<li class="level-top <?php echo $show['class'] ?>" id="">
+			<a class="level-top <?php echo $show['class'] ?>" href="<?php echo $show['url']?>">
+				<span><?php echo $show['title']?></span>
+			</a>
+		</li>
+	<?php endforeach;?>
+</ul>
+</div>
+
+<br/>
+<?php echo $this->getLayout()->createBlock('productnavigator/list')->setProductType('feature')->toHtml();?>

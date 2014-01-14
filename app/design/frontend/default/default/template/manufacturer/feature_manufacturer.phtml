@@ -1,0 +1,45 @@
+<?php $featuredManufacturers = $this->getFeaturedManufacturer(); ?>
+<?php 
+	if(Mage::helper('manufacturer/feature')->displayOnSideBar()): 
+		if(count($featuredManufacturers)):
+			$i = 0;
+			//$column = Mage::helper('manufacturer/feature')->getNumberColumn();
+			$column = 2;
+			$number = Mage::helper('manufacturer/feature')->getNumberDisplay();
+			
+?>
+			<div class="block block-subscribe">
+				<div class="block-title"><strong><span><?php echo $this->__('Featured Brands'); ?></strong></span></div>
+				<div class="block-content">
+			
+					<div id="manufacturer-table">
+						<table id="feature-manufacturer">
+							<?php		
+								foreach($featuredManufacturers as $id=>$feature):
+									if($i == $number) break;
+									if($i % $column == 0):
+							?>
+									<tr>
+								<?php endif; ?>
+								<?php //$feature = Mage::getModel('manufacturer/manufacturer')->load($id);?>
+										<td class="center">
+											<a href="<?php echo $this->getManufacturerDetailUrl($feature); ?>" title="<?php echo $feature->getName(); ?>">
+												<?php echo $this->getManufacturerImage($feature, $column); ?>
+											</a>
+										</td>
+										<?php $i++; ?>
+								<?php if($i % $column == 0): ?>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</table>
+					</div>
+			
+				</div>
+			</div>
+	<?php endif; ?>
+<?php endif; ?>
+
+<script type="text/javascript">decorateTable('feature-manufacturer')</script>
+
+

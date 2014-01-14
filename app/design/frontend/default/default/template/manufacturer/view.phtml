@@ -1,0 +1,22 @@
+<?php
+	
+	$manufacturer = $this->getManufacturer();
+	
+	if($manufacturer):
+?>
+
+<div id="manufacturer_content">
+	<h3><?php echo $manufacturer->getData('name_store');?></h3>
+	<div>
+		<?php echo $this->getManufacturerImage($manufacturer);?>
+		<p><?php echo $manufacturer->getDescriptionShort();?></p>
+		<p><?php echo $manufacturer->getDescription();?></p>
+	</div>
+	
+	<div class="manufacturer-product-list">
+		<?php 
+			echo $this->getProductListHtml() ;
+		?>
+	<?php endif; ?>	
+	</div>
+</div>

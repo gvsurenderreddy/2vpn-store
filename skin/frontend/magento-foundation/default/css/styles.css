@@ -1819,3 +1819,10 @@ footer li.last { background:none !important; padding-right:0 !important; border-
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
+
+#map-canvas {
+    height: 500px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}

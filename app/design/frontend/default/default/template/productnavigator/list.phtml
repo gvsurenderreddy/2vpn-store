@@ -1,0 +1,48 @@
+<?php $num_show = Mage::getStoreConfig('productnavigator/general/num_show')?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<div class="banner-main-home">
+	<div class="box-rounded-corners">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td class="top-left-rc"></td>
+			<td class="top-center-rc"></td>
+			<td class="top-right-rc"></td>
+		  </tr>
+		  <tr>
+			<td class="middle-left-rc"></td>
+			<td class="content-rc">
+				<div class="bestseller-head">
+					<h2><?php echo $this->getTitle();?></h2>
+				</div>
+				<?php $_collectionSize = count($_products->getItems()) ?>
+				<table class="products-grid-bestseller" id="products-grid-table" border="0">
+					<tr>
+					<?php $i=1; foreach ($_products->getItems() as $_product): ?>
+					<?php $num_show--;?>
+					<td <?php if($i%$_collectionSize==0 or $i==$_collectionSize or $num_show == 0){echo 'class="last"';} ?> >
+						<div id="cont_<?php echo $i;?>">
+							<a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+								<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(122, 109); ?>" width="122" height="109" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+							</a>
+							<?php if ($this->isShowPrice())echo $this->getPriceHtml($_product, true); ?>
+							<?php if ($this->isShowProductName()):?>
+							<h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+							<?php endif;?>
+						</div>
+					</td>
+					<?php if ($num_show <= 0) break;?>
+					<?php $i++; endforeach; $kol = $_collectionSize; ?>
+				   </tr>
+				</table>
+			</td>
+			<td class="middle-right-rc"></td>
+		  </tr>
+		  <tr>
+			<td class="bottom-left-rc"></td>
+			<td class="bottom-center-rc"></td>
+			<td class="bottom-right-rc"></td>
+		  </tr>
+		</table>
+	</div>
+</div>
+<?php endif; ?> 

@@ -1,0 +1,25 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Wizardinstaller
+ */
+?>
+
+<div class="message">
+	<div class="title">
+		<?php echo $this->getFinisedMessage() ?> 
+	</div>
+</div>
+<input type="hidden" name="is_install" value="1"/>
+<input type="hidden" name="selected_theme" value="<?php echo $this->getSelectedTheme() ?>" />	
+<div class="buttons">
+	<!--
+	<button type="button" class="themeinstaller-back button" onclick="themeInstaller.back();">
+		<span>
+			<span><?php echo $this->__('Back')?></span>
+		</span>
+	</button>
+	-->
+	<button type="button" class="themeinstaller-accept button" onclick="themeInstaller.finish();">
+		<span>&nbsp;&nbsp;<?php echo $this->__('Finish')?>&nbsp;&nbsp;</span>
+	</button>			
+</div>

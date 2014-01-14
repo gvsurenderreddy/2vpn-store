@@ -1,0 +1,24 @@
+<?php
+$most_frequently = $this->getMostFrequently();
+$number_faq = Mage::getStoreConfig('faq/general/sidebar_question_number');
+?>
+<?php if(count($most_frequently)): ?>
+<div class="block block-faq">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('FAQs'); ?></span></strong>
+    </div>
+    <div id="sidebarfaq" class="block-content">
+        <ul>
+            <?php 
+				$count = 0;
+				foreach($most_frequently as $question)
+				{
+					$count++;
+					if ($count > $number_faq) break;
+					echo("<li><a href='". Mage::getBaseUrl() . $question->getUrlKey() ."' title='".$question->getTitle()."'>".$count.'. '.$question->getTitle()."</a> </li>");
+				}
+			?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

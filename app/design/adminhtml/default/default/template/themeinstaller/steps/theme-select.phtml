@@ -1,0 +1,34 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Wizardinstaller
+ */
+?>
+<?php $availabelThemes = $this->getAvailabelThemes()?>
+<div class="message">
+	<?php if(count($availabelThemes) ): ?>
+		<div class="title"><?php echo $this->__('Please select one of theme(s) below.') ?></div>
+		<div class="theme-select content-option-installer">
+			<ul>
+			<?php foreach($availabelThemes as $sku=>$theme): ?>
+				<li>
+					<input type="radio" value="<?php echo $sku?>" id="theme_<?php echo $sku?>" class="radio validate-one-required-by-name" name="selected_theme">
+					<span class="label"><label for="theme_<?php echo $sku?>"><?php echo $theme['name']?></label></span>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+	<?php else: ?>
+	<?php endif; ?>
+</div>
+<div class="buttons">
+	<button type="button" class="themeinstaller-cancel button" onclick="themeInstaller.cancel();">
+		<span>
+			<span><?php echo $this->__('Cancel')?></span>
+		</span>
+	</button>	
+	<button type="button" class="themeinstaller-accept button" onclick="themeInstaller.run();">
+		<span>
+			<span><?php echo $this->__('Next')?></span>
+		</span>
+	</button>			
+</div>

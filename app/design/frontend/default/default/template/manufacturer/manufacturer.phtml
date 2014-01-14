@@ -1,0 +1,59 @@
+<?php $featuredManufacturers = $this->getFeaturedManufacturer() ?>
+<?php if(count($featuredManufacturers)): ?>
+	<div class="feature">
+		<h3 class="manufacturer_list_head"><?php echo $this->__('Featured Brands') ?></h3>
+		<?php if(Mage::helper('manufacturer')->getFeatureModeCode() == 1): ?>
+			<div >
+				<ul id='featured_manufacturer'>
+					<?php 
+						foreach($featuredManufacturers as $featuredManufacturer) {
+							echo("<li><a href='". $this->getManufacturerDetailUrl($featuredManufacturer)."'><span>".$this->getManufacturerImage($featuredManufacturer)."</span></a></li>");
+						}
+					?>
+				</ul>
+			</div>
+		<?php else: ?>
+			<div class="feature-content">	
+				<ul id="screen">
+					<li><a id="left" href="#"><img src="<?php echo $this->getSkinUrl('images/imgNavLeft2.png')?>" alt="navLeft"/></a></li>
+					<li id="view">
+						<ul id="images">
+							<?php 
+								foreach($featuredManufacturers as $featuredManufacturer)
+								{
+									echo("<li><a href='". $this->getManufacturerDetailUrl($featuredManufacturer)."'><span>".$this->getManufacturerImage($featuredManufacturer)."</span></a></li>");
+								}
+							?>
+						</ul>
+					</li>
+					<li><a id="right" href="#"><img src="<?php echo $this->getSkinUrl('images/imgNavRight2.png')?>" alt="navRight"/></a></li>
+				</ul>
+			</div>
+		<div class="clear"></div>
+		<?php endif; ?>
+	</div>
+<?php endif; ?>
+
+
+<div class="manufacturer">
+	<h3 class="manufacturer_list_head"><?php echo $this->__('Manufacturers') ?></h3>
+
+	<?php $this->generateListCharacter();?>
+
+	<ul id="manufacturer_list">
+		<?php
+			
+			$manufacturers = $this->getManufacturers();
+			if(count($manufacturers))
+			{
+				foreach($manufacturers as $manufacturer)
+				{
+					echo("<li><a href='". $this->getManufacturerDetailUrl($manufacturer) . "' title='" . $manufacturer->getName() . "'><span>" .$manufacturer->getData('name_store') ."</span></a></li>");
+				}	
+			}
+		?>
+		
+	</ul>
+        
+</div>        
+        

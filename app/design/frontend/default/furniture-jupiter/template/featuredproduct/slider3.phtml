@@ -1,0 +1,35 @@
+<?php 
+$mode = Mage::getStoreConfig('featuredproduct/general/show_type'); 
+$delay_time = $this->getDelayTime();
+
+?>
+<!--Slider for banner-->	
+	<?php if (($products = $this->getProductCollection())): ?>
+		<div id="slider-features">
+			<ul id="features-screen">
+				<li class="nav-left"><a href="#" id="left">&nbsp;</a></li>
+				<li id="view">
+					<ul id="images">
+						<?php $i = 0; foreach ($products->getItems() as $product): ?>						
+							<?php if ($i<Mage::getStoreConfig('featuredproduct/general/show_product_number')):?>
+							<li>
+								<div class="item">
+									<div class="product-info">
+										<div class="featuredproduct-image"> 
+											<a href="<?php echo $product->getProductUrl() ?>" class="product-img">
+												<img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(250, 357); ?>"/>												
+											</a>
+											<a class="buy-now" href="<?php echo $this->getAddToCartUrl($product)?>"><span><span><span><?php echo $this->__('Buy Now!') ?></span></span></span></a>
+										</div>	
+										
+									</div>	
+								</div>	
+							</li>
+						<?php $i++;endif; endforeach;?>
+					</ul>
+				</li>
+				<li class="nav-right"><a href="#" id="right">&nbsp;</a></li>
+			</ul>
+		</div>
+	<?php endif;?>
+<!-- End slider-->

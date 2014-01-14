@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+  <name>Furniture Jupiter</name>
+  <sku>furniture-jupiter</sku>
+  <components>
+    <item>
+      <name>static-block</name>
+      <status>1</status>
+    </item>
+    <item>
+      <name>cms-page</name>
+      <status>1</status>
+    </item>
+  </components>
+  <extensions>
+    <item>
+      <name>Magestore_Catalogsorter</name>
+      <status>1</status>
+    </item>
+    <item>
+      <name>Magestore_Featuredproduct</name>
+      <status>1</status>
+    </item>
+    <item>
+      <name>Magestore_Themeswitcher</name>
+      <status>1</status>
+    </item>
+  </extensions>
+  <step>finished</step>
+  <sumcode>73252ab118087ca2ce3a48d2e2503408</sumcode>
+</config>

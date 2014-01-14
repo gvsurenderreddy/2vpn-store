@@ -1,0 +1,15 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Themeinfo
+ */
+?>
+<?php $theme = $this->getTheme() ?>
+<div class="themeinstaller-themeinfo">
+	<div class="theme-status">
+		<?php if($this->isInstalled()): ?>
+			<?php echo $this->__('Installed') ?>
+		<?php else: ?>
+			<a href="<?php echo $this->getInstallUrl()?>"><?php echo $this->__('Install Now')?></a>
+		<?php endif; ?>
+	</div>
+</div>

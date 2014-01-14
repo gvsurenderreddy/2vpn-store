@@ -1,0 +1,56 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+    function initialize() {
+      var mapOptions = {
+        zoom: 14,
+        center: new google.maps.LatLng(50.62837, 3.05743)
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      setMarkers(map, stores);   
+    }
+
+    var stores = [
+        <?php 
+            $stores = Mage::getModel('storelocator/storelocator')->getCollection(); 
+            $storeStr = '';
+            foreach ($stores as $store) {
+                $geo = explode(", ", $store->geo);
+                $storeStr .= "[\"".$store->name."\", ". $geo[0] .", ". $geo[1]. ", ". 1 . ", ". "\"". $store->address."\", \"".$store->info."\"], ";
+            }
+            $storeStr = rtrim($storeStr, ", ");
+            echo $storeStr;
+        ?>
+    ];
+
+    function setMarkers(map, locations) {
+        var infowindow = new google.maps.InfoWindow({ maxWidth: 320 });
+        var shape = {
+            coord: [1, 1, 1, 42, 42, 42, 42 , 1],
+            type: 'poly'
+        };
+        for (var i = 0; i < locations.length; i++) {
+            var store = locations[i];
+            var myLatLng = new google.maps.LatLng(store[1], store[2]);
+            var content = '<div class="map-content"><h5>'+store[0]+'</h5><p><strong>Informations</strong> :<br /> '+store[4]+'</p></div>';
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                //icon: image,
+                shape: shape,
+                title: store[0],
+                zIndex: store[3]
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, content) {
+                return function() {
+                    infowindow.setContent(content);
+                    infowindow.open(map, marker);
+                }
+            })(marker, content));
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<h2>Store Locator</h2>
+<div id="map-canvas"></div>

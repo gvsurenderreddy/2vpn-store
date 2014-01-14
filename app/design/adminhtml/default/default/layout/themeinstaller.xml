@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addJs"><script>magestore/themeinstaller.js</script></action>
+			<action method="addCss"><stylesheet>css/magestore/themeinstaller.css</stylesheet></action>
+		</reference>
+		<reference name="notifications">
+			<block type="themeinstaller/adminhtml_wizardinstaller" />
+		</reference>
+	</default>
+</layout>

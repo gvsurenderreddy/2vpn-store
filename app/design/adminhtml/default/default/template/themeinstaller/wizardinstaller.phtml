@@ -1,0 +1,58 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Wizardinstaller
+ */
+?>
+<?php if ($this->canShow()): ?>
+<script type="text/javascript">
+//<![CDATA[
+    var wizardInstallerClosed = false;
+    function openWizardInstaller() {
+        var height = $('html-body').getHeight();
+        $('themeinstaller-wizardinstaller').setStyle({'height':height+'px'});
+        toggleSelectsUnderBlock($('themeinstaller-wizardinstaller'), false);
+        Element.show('themeinstaller-wizardinstaller');
+        $('themeinstaller-window').addClassName('show');
+    }
+
+    function closeWizardInstaller() {
+        toggleSelectsUnderBlock($('themeinstaller-wizardinstaller'), true);
+        Element.hide('themeinstaller-wizardinstaller');
+        $('themeinstaller-window').removeClassName('show');
+        wizardInstallerClosed = true;
+    }
+
+    Event.observe(window, 'load', openWizardInstaller);
+    Event.observe(window, 'keyup', function(evt) {
+        if(wizardInstallerClosed) return;
+        var code;
+        if (evt.keyCode) code = evt.keyCode;
+        else if (evt.which) code = evt.which;
+        if (code == Event.KEY_ESC) {
+            closeWizardInstaller();
+        }
+    });
+	
+	var themeInstaller = new ThemeInstaller('wizard-installer-content','wizard-installer-form','themeinstaller-waiting','<?php echo $this->getInstallUrl()?>','<?php echo $this->getBackUrl()?>','<?php echo $this->getFinishUrl() ?>','<?php echo $this->getCancelUrl() ?>');
+//]]>
+</script>
+<div id="themeinstaller-wizardinstaller" style="display:none;"></div>
+<div id="themeinstaller-window" class="wizard-installer">
+	<div class="bkg-left-installer"></div>
+	<div class="bkg-repeat-installer">
+		<div class="wizard-installer-head">
+			<h2><?php echo $this->getHeaderText(); ?></h2>
+		</div>
+		<form id="wizard-installer-form">
+			<div id="wizard-installer-content" class="wizard-installer-content">
+				<?php echo $this->getStep($this->getIntialStep()) ?>
+			</div>		
+		</form>
+		<div class="clear"></div>
+		<div class="powered">Powered by <a href="http://magestore.com" target="_blank">Magestore.com</a></div>
+		<div class="themeinstaller-waiting" id="themeinstaller-waiting" style="display:none;"></div>	
+	</div>
+	<div class="bkg-right-installer"></div>
+</div>
+<?php $this->shown()?>
+<?php endif; ?>

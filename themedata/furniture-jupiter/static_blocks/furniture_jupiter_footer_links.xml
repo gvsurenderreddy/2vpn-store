@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<block>
+    <title>Furniture Jupiter Footer Links</title>
+    <identifier>furniture_jupiter_footer_links</identifier>
+    <status>1</status>
+    <content>
+       <![CDATA[
+			<div class="footer-links">
+			<ul class="first">
+			<li><a href="#"><span>Careers</span></a></li>
+			<li><a href="#"><span>Investor Relations</span></a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><span>Nordstrom Rack</span></a></li>
+			<li><a href="#"><span>Store Locations &amp; Events</span></a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><span>Check Order Status</span></a></li>
+			<li><a href="#"><span>Returns &amp; Exchanges</span></a></li>
+			</ul>
+			<ul class="last">
+			<li><a href="#"><span>Shipping Options &amp; Charges</span></a></li>
+			<li><a href="#"><span>Product Recall</span></a></li>
+			</ul>
+			</div>
+		]]>
+    </content>
+</block>
+

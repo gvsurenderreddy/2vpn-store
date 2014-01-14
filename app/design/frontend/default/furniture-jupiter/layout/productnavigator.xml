@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+	
+    <product-navigator_index_index>
+		<remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+        <reference name="content">
+            <block type="productnavigator/productnavigator" name="productnavigator"/>
+        </reference>
+    </product-navigator_index_index>
+	
+	<product-navigator_all_index>
+		<remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+        <reference name="content">
+            <block type="productnavigator/all" name="productnavigator.all" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_all_index>
+	
+	<product-navigator_new_index>
+        <remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+            <block type="productnavigator/new" name="productnavigator.new" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_new_index>
+	
+	<product-navigator_mostview_index>
+        <remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+            <block type="productnavigator/mostview" name="productnavigator.mostview" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_mostview_index>
+	
+	<product-navigator_bestseller_index>
+		<remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+        <reference name="content">
+            <block type="productnavigator/bestseller" name="productnavigator.bestseller" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_bestseller_index>
+	
+	<product-navigator_special_index>
+        <remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+            <block type="productnavigator/special" name="productnavigator.special" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_special_index>
+	
+	<product-navigator_feature_index>
+        <remove name="right"/>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+            <block type="productnavigator/feature" name="productnavigator.feature" template="productnavigator/product/list.phtml">
+				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+					<block type="page/html_pager" name="product_list_toolbar_pager"/>
+				</block>
+				<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+			</block>
+        </reference>
+    </product-navigator_feature_index>
+</layout> 

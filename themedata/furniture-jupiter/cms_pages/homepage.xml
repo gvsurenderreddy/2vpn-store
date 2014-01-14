@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<home_page>    
+	<page_information>
+		<page_title>Furniture Jupiter Home</page_title>
+		<url_key>furniture-jupiter-home</url_key>
+		<store_view>0</store_view>
+		<is_active>1</is_active>
+		<set_as_homepage>0</set_as_homepage>
+	</page_information>
+	<content>
+		<content_heading></content_heading>
+		<content>
+		<![CDATA[		
+			<div class="store-home-product">
+			<div class="product-banner">
+			<div class="new-products">{{block type="catalog/product_new" template="catalog/product/new.phtml"}}</div>
+			</div>
+			<div class="product-bottom">
+			<div class="store-manufacture">{{block type="manufacturer/manufacturer" name="manufacturer" template="manufacturer/sidebar.phtml"}}</div>
+			<div class="store-featuredproduct">{{block type="featuredproduct/featuredproduct" name="featuredproduct" template="featuredproduct/featuredproduct.phtml"}}</div>
+			</div>
+			</div>
+		]]>		
+		</content>
+	</content>
+	<design>
+		<layout>one_column</layout>
+		<layout_update_xml>
+			<![CDATA[
+					
+			]]>		
+		</layout_update_xml>
+	</design>
+</home_page>

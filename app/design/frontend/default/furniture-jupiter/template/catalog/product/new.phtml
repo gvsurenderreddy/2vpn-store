@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('magestore/furniture-jupiter/bannerslider/jquery.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('magestore/furniture-jupiter/bannerslider/jquery.easing.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('magestore/furniture-jupiter/bannerslider/script.js') ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/productslider/style4.css')?>" />
+<script type="text/javascript">
+var $j = jQuery.noConflict()
+ $j(document).ready( function(){	
+		$obj = $j('#lofslidecontent45').lofJSidernews( { 
+			interval : 5000,
+			easing			: 'easeInOutQuad',
+			duration		: 1200,
+			auto		 	: true,
+			maxItemDisplay  : 3,
+			startItem:1,
+			navPosition     : 'horizontal', // horizontal
+			navigatorHeight : 20,
+			navigatorWidth  : 25,
+			mainWidth:910} );	
+	});
+</script>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<div id="lofslidecontent45" class="newproduct-slider">
+	<div class="slider-outer">
+		<div class="list-item">
+			<ul class="lof-main-wapper">
+			<?php $i=0; foreach ($_products->getItems() as $_product): ?>
+				<li>
+					<div class="product-img">
+						<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(502,306) ?>" width="502" height="306" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+					</div>
+					<div class="product-info">
+						<h3 class="product-name">
+							<label for="new_product" class="title-new"><?php echo $this->__('NEW') ?></label>
+							<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+								<?php $_productName = nl2br($this->htmlEscape($_product->getName()) )?>
+								<?php $short_name = substr($_productName, 0, 15);  ?>
+								<?php if(substr($short_name, 0, strrpos($short_name, ' '))!='') 
+									$short_name = substr($short_name, 0, strrpos($short_name, ' '));
+									$short_name = $short_name.'...';	
+								?>
+								<?php echo $short_name;?>
+							</a>
+						</h3>
+						<div class="product-description">
+							<div class="desc std">
+								<?php $_description = nl2br($this->htmlEscape($_product->getShortDescription()))?>
+								<?php $short_desc = substr($_description, 0, 66);  ?>
+								<?php if(substr($short_desc, 0, strrpos($short_desc, ' '))!='') 
+									$short_desc = substr($short_desc, 0, strrpos($short_desc, ' '));
+									$short_desc = $short_desc.'...';	
+								?>
+								<?php echo $short_desc;?>
+							</div>
+						</div>
+						<div class="actions">
+							<?php if($_product->isSaleable()): ?>
+								<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-add-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							<?php else: ?>
+								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+							<?php endif; ?>
+						</div>
+					</div>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		</div>	
+	</div>
+	<div class="home-adv">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('furniture-jupiter-home-advertising ')->toHtml() ?>
+	</div>
+</div> 
+<?php endif; ?>

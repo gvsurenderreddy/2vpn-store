@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<block>
+    <title>Furniture Jupiter Social Links</title>
+    <identifier>furniture_jupiter_social_links</identifier>
+    <status>1</status>
+    <content>
+       <![CDATA[
+			<div class="follow-links">
+			<ul>
+			<li class="follow-twitter first" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" twitter" title="Follow to Twitter" href="#"><span>Follow to Twitter</span></a></li>
+			<li class="follow-fb" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" facebook" title="Follow to Facebook" href="#"><span>Follow to Facebook</span></a></li>
+			<li class="follow-linkedin" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" linkedin" title="Follow to LinkedIn" href="#"><span>Follow to LinkedIn</span></a></li>
+			<li class="follow-wordpress" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" wordpress" title="Follow to Wordpress" href="#"><span>Follow to Wordpress</span></a></li>
+			<li class="follow-youtube" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" youtube" title="Follow to Youtube" href="#"><span>Follow to Youtube</span></a></li>
+			<li class="rss last" onmouseover="addHover(this,1)" onmouseout="addHover(this,0)"><a class=" rss" title="RSS" href="#"><span>RSS</span></a></li>
+			</ul>
+			</div>
+	<script type="text/javascript">
+				 function addHover(el, hover)
+				 {
+				  curEl = $(el);
+				  var anchorId = curEl.down(0);
+				  if(curEl.hasClassName('active')){
+				   return;
+				  }
+				  if (hover) {
+				   Element.addClassName(el, 'hover');
+				   anchorId.addClassName('hover-a');
+				  }
+				  else {
+				   Element.removeClassName(el, 'hover');
+				   anchorId.removeClassName('hover-a');
+				  }
+				 }
+	</script>
+		]]>
+    </content>
+</block>
+

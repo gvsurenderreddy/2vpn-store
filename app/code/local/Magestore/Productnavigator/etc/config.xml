@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magestore_Productnavigator>
+            <version>0.1.0</version>
+        </Magestore_Productnavigator>
+    </modules>
+    <frontend>
+        <routers>
+            <product-navigator>
+                <use>standard</use>
+                <args>
+                    <module>Magestore_Productnavigator</module>
+                    <frontName>product-navigator</frontName>
+                </args>
+            </product-navigator>
+        </routers>
+        <layout>
+            <updates>
+                <productnavigator>
+                    <file>productnavigator.xml</file>
+                </productnavigator>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<productnavigator>
+				<use>admin</use>
+				<args>
+					<module>Magestore_Productnavigator</module>
+					<frontName>productnavigator</frontName>
+				</args>
+			</productnavigator>
+        </routers>
+    </admin>
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<productnavigator translate="title">
+											<title>Product Navigator</title>
+											<sort_order>80</sort_order>
+										</productnavigator>									
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<productnavigator>
+					<file>productnavigator.xml</file>
+				</productnavigator>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <productnavigator>
+                <class>Magestore_Productnavigator_Model</class>
+                <resourceModel>productnavigator_mysql4</resourceModel>
+            </productnavigator>
+            <productnavigator_mysql4>
+                <class>Magestore_Productnavigator_Model_Mysql4</class>
+                <entities>
+                    <productnavigator>
+                        <table>productnavigator</table>
+                    </productnavigator>
+                </entities>
+            </productnavigator_mysql4>
+			<reports_mysql4>
+                <rewrite>
+                    <product_collection>Magestore_Productnavigator_Model_Mysql4_Product_Collection</product_collection>
+				</rewrite>
+			</reports_mysql4>
+		</models>
+        <resources>
+            <productnavigator_setup>
+                <setup>
+                    <module>Magestore_Productnavigator</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </productnavigator_setup>
+            <productnavigator_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </productnavigator_write>
+            <productnavigator_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </productnavigator_read>
+        </resources>
+        <blocks>
+            <productnavigator>
+                <class>Magestore_Productnavigator_Block</class>
+            </productnavigator>
+        </blocks>
+        <helpers>
+            <productnavigator>
+                <class>Magestore_Productnavigator_Helper</class>
+            </productnavigator>
+        </helpers>
+    </global>
+	<default>
+        <productnavigator>
+			<general>
+				<columns>5</columns>
+				<num_show>5</num_show>
+            </general>
+            <!-- <all>
+				<is_show>1</is_show>
+				<title>ALL</title>
+				<page_title>All Products</page_title>
+				<order>1</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </all> -->
+			<special>
+				<is_show>1</is_show>
+				<title>Specials</title>
+				<page_title>Special Products</page_title>
+				<order>2</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </special>
+			<new>
+				<is_show>1</is_show>
+				<title>New Products</title>
+				<page_title>New Products</page_title>
+				<order>3</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </new>
+			<bestseller>
+				<is_show>1</is_show>
+				<title>Best Seller</title>
+				<page_title>Best seller Products</page_title>
+				<order>4</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </bestseller>
+			<!-- <mostview>
+				<is_show>1</is_show>
+				<title>MOST VIEW</title>
+				<page_title>Most view Products</page_title>
+				<order>4</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </mostview>
+			
+			<feature>
+				<is_show>1</is_show>
+				<title>FEATURE</title>
+				<page_title>Feature Products</page_title>
+				<order>6</order>
+				<show_price>1</show_price>
+				<show_name>1</show_name>
+            </feature> -->
+		</productnavigator>
+	</default>
+</config>

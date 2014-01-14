@@ -1,0 +1,41 @@
+<?php
+/**
+ * @see Magestore_Themeinstaller_Block_Adminhtml_Wizardinstaller
+ */
+?>
+<?php $extensions = $this->getIncludedExtensions()?>
+<div class="message">
+	<div class="title"><?php echo $this->__('Please select the extensions below to install automatically.') ?></div>
+	<div class="theme-select content-option-installer">
+		<?php if(count($extensions) ): ?>
+			<ul>
+			<?php foreach($extensions as $extension=>$status): ?>
+				<li>
+					<input type="checkbox" value="<?php echo $extension ?>" id="extension_<?php echo $extension ?>" class="checkbox" name="selected_extension[]" <?php echo ($status || 1) ? 'checked' : '' ?>/>
+					<span class="label"><label for="extension_<?php echo $extension ?>"><?php echo $extension ?></label></span>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+		<input type="hidden" name="is_install_theme" value="1" />	
+		<input type="hidden" name="run_installer" value="1" />	
+		<input type="hidden" name="selected_theme" value="<?php echo $this->getSelectedTheme() ?>" />	
+	</div>
+</div>
+<div class="buttons">
+	<button type="button" class="themeinstaller-back button" onclick="themeInstaller.back();">
+		<span>
+			<span><?php echo $this->__('Back')?></span>
+		</span>
+	</button>
+	<button type="button" class="themeinstaller-cancel button btn-sparator" onclick="themeInstaller.cancel();">
+		<span>
+			<span><?php echo $this->__('Cancel')?></span>
+		</span>
+	</button>	
+	<button type="button" class="themeinstaller-accept button" onclick="themeInstaller.run();">
+		<span>
+			<span><?php echo $this->__('Next')?></span>
+		</span>
+	</button>			
+</div>

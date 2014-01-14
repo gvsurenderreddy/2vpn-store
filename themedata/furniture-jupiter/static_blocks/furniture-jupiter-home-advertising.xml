@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<block>
+    <title>Furniture Jupiter Home Advertising</title>
+    <identifier>furniture-jupiter-home-advertising</identifier>
+    <status>1</status>
+    <content>
+       <![CDATA[
+			<div class="text-adv"><a href="#"><img title="Free Shipping" src="{{skin url='images/home-adv.png'}}" border="0" alt="Free Shipping" width="202" height="16" /></a></div>
+		]]>
+    </content>
+</block>
+

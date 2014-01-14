@@ -1,0 +1,17 @@
+<?php 
+	$product = $this->getProduct(); 
+	$manufacturerName = $product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($product);
+	if($manufacturerName):
+		$manufacturer = $this->getManufacturer($manufacturerName);
+		if($this->displayManufacturerInProductViewPage()): 
+?>
+		<?php if($this->getManufacturerImageResize($manufacturerName)): ?>
+			<div class="divider"></div>
+			<div id="product-manufacturer">
+				<a href="<?php echo $this->getManufacturerUrl($manufacturerName);?>">
+					<?php echo $this->getManufacturerImageResize($manufacturerName) ?>
+				</a>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
