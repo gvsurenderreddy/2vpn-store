@@ -37,6 +37,34 @@ class Flst_Storelocator_Block_Adminhtml_Storelocator_Edit_Tabs_Form extends Mage
            'name' => 'info'
         ));
         
+        $fieldset->addField('presentation', 'textarea', array(
+           'label' => 'Présentation',
+           'class' => 'required_entry',
+           'required' => true,
+           'name' => 'presentation'
+        ));
+        
+        $fieldset->addField('contacts', 'text', array(
+           'label' => 'Contacts',
+           'class' => 'required_entry',
+           'required' => true,
+           'name' => 'contacts'
+        ));
+        
+        $fieldset->addField('horaires', 'text', array(
+           'label' => 'Horaires',
+           'class' => 'required_entry',
+           'required' => true,
+           'name' => 'horaires'
+        ));
+        
+        $fieldset->addField('horaires_exp', 'text', array(
+           'label' => 'Horaires exceptionnels',
+           'class' => 'required_entry',
+           'required' => true,
+           'name' => 'horaires_exp'
+        ));
+        
         if (Mage::registry('storelocator_data')) {
             $form->setValues(Mage::registry('storelocator_data')->getData());
         }

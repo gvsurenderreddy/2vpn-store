@@ -52,5 +52,20 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<h2>Store Locator</h2>
 <div id="map-canvas"></div>
+
+<h1>Nos boutiques</h1>
+<ul>
+<?php
+    $stores = Mage::getModel('storelocator/storelocator')->getCollection();
+    foreach ($stores as $store) {
+        echo '<li>';
+        echo '<h3>', $store->name, '</h3>';
+        echo '<p><strong>Présentation</strong> : ', $store->presentation, '<br />';
+        echo '<strong>Coordonnées et Contact</strong> : ', $store->contacts, '<br />';
+        echo '<strong>Horaires</strong> : ', $store->horaires, '<br />';
+        echo '<strong>Ouvertures exceptionnelles</strong> : ', $store->horaires_exp, '<br />';
+        echo '</li>';
+    }
+?>
+</ul>
