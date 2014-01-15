@@ -13,7 +13,7 @@ class Flst_Vouchers_Block_Adminhtml_Vouchers_Edit extends Mage_Adminhtml_Block_W
     
     public function getHeaderText() 
     {
-        if (Mage::registry('vouchers_data') && Mage::registry('vouchers_Data')->getId()) {
+        if (Mage::registry('vouchers_data') && Mage::registry('vouchers_data')->getId()) {
             return 'Editer la Promotion '.$this->escapeHtml(Mage::registry('vouchers_data')->getId()).'<br />';
         } else {
             return 'Ajouter une Promotion';
