@@ -1,7 +1,7 @@
 <config>
     <modules>
         <Flst_Storelocator>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </Flst_Storelocator>
     </modules>
     <frontend>

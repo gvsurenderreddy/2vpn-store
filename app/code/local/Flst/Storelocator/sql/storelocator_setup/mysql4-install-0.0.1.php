@@ -3,11 +3,16 @@
 $installer = $this;
 $installer->startSetup();
 $installer->run("
--- DROP TABLE IF EXISTS {$this->getTable('storelocator')};
+DROP TABLE IF EXISTS {$this->getTable('storelocator')};
 CREATE TABLE {$this->getTable('storelocator')} (
   `store_id` int(11) unsigned NOT NULL auto_increment,
   `name` varchar(255) NOT NULL default '',
   `address` varchar(255) NOT NULL default '',
+  `presentation` varchar(500) NOT NULL default '',
+  `contacts` varchar(255) NOT NULL default '',
+  `horaires` varchar(500) NOT NULL default '',
+  `horaires_exp` varchar(255) NOT NULL default '',
+  `responsable` varchar(255) NOT NULL default '',
   `geo` varchar(255) NOT NULL default '',
   `info` varchar(500) NOT NULL default '',
   `created_time` datetime NULL,
