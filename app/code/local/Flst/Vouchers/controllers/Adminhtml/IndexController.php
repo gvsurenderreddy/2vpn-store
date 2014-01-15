@@ -43,26 +43,43 @@ class Flst_Vouchers_Adminhtml_IndexController extends Mage_Adminhtml_Controller_
     }
     
     public function saveAction()
-    {
+    {   
+        /*echo '<pre>';
+        print_r($this->getRequest()->getPost('stores'));
+        echo '</pre>';
+        
+        die();*/
+        
+        $write = Mage::getSingleton('core/resource')->getConnection('core_write');
+        
         if ($this->getRequest()->getPost()) {
             try {
                 $postData = $this->getRequest()->getPost();
                 $storeModel = Mage::getModel('vouchers/vouchers');
+                
                 if ($this->getRequest()->getParam(('id')) <= 0) {
                     $storeModel->setCreatedTime(Mage::getSingleton('core/date')->gmtDate());
+                } else {
+                    $write->query("DELETE FROM storelocator_vouchers WHERE voucher_id = ".$this->getRequest()->getParam('id'));
                 }
                 $storeModel->addData($postData)
                     ->setUpdateTime(Mage::getSingleton('core/date')->gmtDate())
                     ->setId($this->getRequest()->getParam('id'))
                     ->save();
-                
+                                
+                foreach ($this->getRequest()->getPost('stores') as $storeId) {
+                    if ($storeId != 0) {
+                        $write->query("INSERT INTO storelocator_vouchers(store_id, voucher_id) VALUES('".$storeId."', '".$storeModel->getId()."')");
+                    }
+                }
+                                                
                 Mage::getSingleton('adminhtml/session')
                         ->addSuccess('added');
                 Mage::getSingleton('adminhtml/session')
                         ->setContactData(false);
                 $this->_redirect('*/*/');
             } catch (Exception $e) {
-                
+                $e->getMessage();
             }
         }
     }

@@ -25,6 +25,13 @@ class Flst_Vouchers_Block_Adminhtml_Vouchers_Grid extends Mage_Adminhtml_Block_W
             )
         );
         
+        $this->addColumn('description', array(
+            'header' => 'Description',
+            'align' => 'left',
+            'index' => 'description'
+            )
+        );
+        
         $this->addColumn('amount', array(
             'header' => 'Montant',
             'align' => 'left',
