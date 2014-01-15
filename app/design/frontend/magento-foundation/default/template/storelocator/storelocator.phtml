@@ -58,13 +58,22 @@
 <ul>
 <?php
     $stores = Mage::getModel('storelocator/storelocator')->getCollection();
+    $read = Mage::getSingleton('core/resource')->getConnection('core_read');
     foreach ($stores as $store) {
+        $sqlVouchers = "SELECT * FROM vouchers INNER JOIN storelocator_vouchers ON storelocator_vouchers.voucher_id = vouchers.voucher_id WHERE store_id = ".$store->store_id;
+        $vouchers = $read->fetchAll($sqlVouchers);
         echo '<li>';
-        echo '<h3>', $store->name, '</h3>';
-        echo '<p><strong>Présentation</strong> : ', $store->presentation, '<br />';
-        echo '<strong>Coordonnées et Contact</strong> : ', $store->contacts, '<br />';
-        echo '<strong>Horaires</strong> : ', $store->horaires, '<br />';
-        echo '<strong>Ouvertures exceptionnelles</strong> : ', $store->horaires_exp, '<br />';
+            echo '<h3>', $store->name, '</h3>';
+            echo '<p><strong>Présentation</strong> : ', $store->presentation, '<br />';
+            echo '<strong>Coordonnées et Contact</strong> : ', $store->contacts, '<br />';
+            echo '<strong>Horaires</strong> : ', $store->horaires, '<br />';
+            echo '<strong>Ouvertures exceptionnelles</strong> : ', $store->horaires_exp, '<br />';
+            if (!empty($vouchers)) {
+                echo '<strong><span style="color:#00687E">Réductions en cours : </span></strong><br />';
+                foreach ($vouchers as $voucher) {
+                    echo "&nbsp;&nbsp;&nbsp;&nbsp;", $voucher['description'], " du ", date("d/m/y", strtotime($voucher['dateFrom'])), " au ", date("d/m/y", strtotime($voucher['dateTo'])), ".<br />"; 
+                }
+            }
         echo '</li>';
     }
 ?>
