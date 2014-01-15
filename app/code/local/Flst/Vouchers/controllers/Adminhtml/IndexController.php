@@ -44,12 +44,6 @@ class Flst_Vouchers_Adminhtml_IndexController extends Mage_Adminhtml_Controller_
     
     public function saveAction()
     {   
-        /*echo '<pre>';
-        print_r($this->getRequest()->getPost('stores'));
-        echo '</pre>';
-        
-        die();*/
-        
         $write = Mage::getSingleton('core/resource')->getConnection('core_write');
         
         if ($this->getRequest()->getPost()) {
@@ -93,6 +87,10 @@ class Flst_Vouchers_Adminhtml_IndexController extends Mage_Adminhtml_Controller_
                         ->delete();
                 Mage::getSingleton('adminhtml/session')
                         ->addSuccess('successfully deleted');
+                
+                $write = Mage::getSingleton('core/resource')->getConnection('core_write');
+                $write->query("DELETE FROM storelocator_vouchers WHERE voucher_id = ".$this->getRequest()->getParam('id'));
+                
                 $this->_redirect('*/*/');
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')
