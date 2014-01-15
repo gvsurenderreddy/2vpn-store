@@ -50,6 +50,10 @@
                         <title>Store Locator</title>
                         <action>adminstorelocator/adminhtml_index</action>
                     </set_time>
+                    <set_time_bis>
+                        <title>Promotions</title>
+                        <action>adminvouchers/adminhtml_index</action>
+                    </set_time_bis>
                 </children>
             </storelocator>
         </menu>
